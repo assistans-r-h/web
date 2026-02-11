@@ -4,6 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ── AUTO-UPDATE CURRENT YEAR ── */
+  const yearElement = document.getElementById('current-year');
+  if (yearElement) {
+    yearElement.textContent = new Date().getFullYear();
+  }
+
   /* ── NAV SCROLL & MOBILE MENU ── */
   const nav = document.getElementById('main-nav');
   const menuToggle = document.querySelector('.mobile-menu-toggle');
