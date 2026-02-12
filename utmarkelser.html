@@ -6,8 +6,24 @@
   <title>Utmärkelser & Certifieringar – Assistans Runt Hörnan AB</title>
   <meta name="description" content="Utmärkelser, certifieringar och erkännanden för Assistans Runt Hörnan AB.">
   <link rel="stylesheet" href="style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Assistans Runt Hörnan AB",
+    "url": "https://assistans-r-h.se/",
+    "telephone": "+46 8 760 19 31",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Tvärvägen 5",
+      "postalCode": "169 36",
+      "addressLocality": "Solna",
+      "addressCountry": "SE"
+    }
+  }
+  </script>
 </head>
-<body>
+<body class="awards-page">
 
 <!-- ── NAV ──────────────────────────────────────── -->
 <nav id="main-nav">
@@ -34,7 +50,7 @@
 </nav>
 
 <!-- ── HERO SECTION ─────────────────────────── -->
-<section class="hero" id="hem" style="margin-top: 70px;">
+<section class="hero" id="hem">
   <div class="hero-left">
     <div class="hero-eyebrow">Våra arbetsprestationer</div>
     <h1 class="hero-h1">
@@ -136,8 +152,8 @@
 </section>
 
 <!-- ── CREDENTIALS SECTION ───────────────────── -->
-<section id="credentials" style="background: #EBF5FB; padding: 4rem 2rem;">
-  <div class="section-tag reveal" style="color: #1A5276;">Verksamhetscertifikat</div>
+<section id="credentials">
+  <div class="section-tag reveal">Verksamhetscertifikat</div>
   <h2 class="section-h2 reveal reveal-delay-1">Officiella <em>Registreringar</em></h2>
   
   <div class="credentials-list">
@@ -173,9 +189,9 @@
 </section>
 
 <!-- ── CTA SECTION ─────────────────────────── -->
-<section id="cta-section" style="text-align: center; padding: 4rem 2rem;">
+<section id="cta-section">
   <h2 class="section-h2 reveal">Intresserad att<br><em>arbeta med oss?</em></h2>
-  <p class="section-lead reveal reveal-delay-1" style="max-width: 600px; margin: 1.5rem auto;">
+  <p class="section-lead reveal reveal-delay-1">
     Vi letar alltid efter passionerade och dedikerade människor
     som vill göra skillnad i andra människors liv.
   </p>
@@ -205,141 +221,6 @@
     <a href="index.html#kontakt">Kontakt</a>
   </nav>
 </footer>
-
-<style>
-  .awards-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 2rem;
-    margin: 3rem 0;
-  }
-
-  .award-card {
-    background: white;
-    padding: 2rem;
-    border-radius: 8px;
-    border: 1px solid var(--border);
-    text-align: center;
-    transition: transform 0.3s, box-shadow 0.3s;
-    box-shadow: var(--shadow-sm);
-  }
-
-  .award-card:hover {
-    transform: translateY(-8px);
-    box-shadow: var(--shadow-md);
-  }
-
-  .award-icon {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 70px;
-    height: 70px;
-    background: var(--teal-pale);
-    border-radius: 50%;
-    margin: 0 auto 1.5rem;
-    color: var(--teal);
-  }
-
-  .award-card h3 {
-    font-size: 1.1rem;
-    color: var(--charcoal);
-    margin-bottom: 0.5rem;
-    font-weight: 600;
-  }
-
-  .award-year {
-    font-size: 0.85rem;
-    color: var(--gold);
-    font-weight: 600;
-    margin-bottom: 0.8rem;
-  }
-
-  .award-card p:last-child {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.6;
-  }
-
-  .credentials-list {
-    max-width: 700px;
-    margin: 2rem auto;
-  }
-
-  .credential-item {
-    display: flex;
-    gap: 1.5rem;
-    padding: 1.5rem;
-    background: white;
-    border-radius: 6px;
-    margin-bottom: 1rem;
-    align-items: flex-start;
-  }
-
-  .credential-check {
-    flex-shrink: 0;
-    width: 32px;
-    height: 32px;
-    background: var(--teal);
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-  }
-
-  .credential-item h4 {
-    font-size: 1rem;
-    color: var(--charcoal);
-    margin-bottom: 0.3rem;
-    font-weight: 600;
-  }
-
-  .credential-item p {
-    font-size: 0.9rem;
-    color: var(--muted);
-  }
-
-  /* Base styles from main CSS */
-  * { box-sizing: border-box; margin: 0; padding: 0; }
-  
-  :root {
-    --cream:        #FAFAF8;
-    --warm-white:   #FFFFFF;
-    --charcoal:     #2C3E50;
-    --soft-black:   #34495E;
-    --teal:         #1A5276;
-    --teal-light:   #2E7BA0;
-    --teal-pale:    #EBF5FB;
-    --gold:         #95A5A6;
-    --muted:        #7F8C8D;
-    --border:       rgba(26,82,118,0.1);
-    --shadow-sm:    0 2px 12px rgba(0,0,0,0.06);
-    --shadow-md:    0 8px 32px rgba(0,0,0,0.1);
-  }
-
-  html { scroll-behavior: smooth; }
-  
-  body {
-    font-family: 'Outfit', sans-serif;
-    background: #F8F9FA;
-    color: #2C3E50;
-    line-height: 1.72;
-  }
-
-  section {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 4rem 2rem;
-  }
-
-  @media (max-width: 768px) {
-    section { padding: 2.5rem 1.5rem; }
-    .awards-grid { grid-template-columns: 1fr; }
-  }
-</style>
 
 <script src="app.js"></script>
 </body>
