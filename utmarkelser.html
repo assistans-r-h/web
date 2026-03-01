@@ -3,9 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utmärkelser & Certifieringar – Assistans Runt Hörnan AB</title>
-  <meta name="description" content="Utmärkelser, certifieringar och erkännanden för Assistans Runt Hörnan AB.">
+  <title>Certifieringar & Erkännanden – Assistans Runt Hörnan AB</title>
+  <meta name="description" content="Våra certifieringar, registreringar och kvalitetsstandarder. Assistans Runt Hörnan AB är ett certifierat och godkänt assistansföretag sedan 2010.">
+  <meta name="keywords" content="certifierad personlig assistans, godkänt assistansföretag, ISO-certifiering omsorg">
+  
+  <!-- Open Graph -->
+  <meta property="og:title" content="Certifieringar & Erkännanden – Assistans Runt Hörnan AB">
+  <meta property="og:description" content="Certifierat assistansföretag med högsta kvalitetsstandarder sedan 2010">
+  
+  <link rel="icon" type="image/png" href="logo.png">
   <link rel="stylesheet" href="style.css">
+  
+  <!-- Structured Data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -19,207 +28,530 @@
       "postalCode": "169 36",
       "addressLocality": "Solna",
       "addressCountry": "SE"
-    }
+    },
+    "foundingDate": "2010-04-12"
   }
   </script>
+  
+  <style>
+    /* Awards page specific styles */
+    .awards-hero {
+      background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-light) 100%);
+      color: var(--color-white);
+      padding: var(--space-24) 0 var(--space-16);
+      margin-top: 76px;
+    }
+    
+    @media (min-width: 1024px) {
+      .awards-hero {
+        margin-top: 84px;
+      }
+    }
+    
+    .awards-hero .section-container {
+      text-align: center;
+      max-width: 900px;
+    }
+    
+    .awards-hero .hero-badge {
+      background: rgba(255, 255, 255, 0.2);
+      color: var(--color-white);
+      border-color: rgba(255, 255, 255, 0.3);
+      display: inline-flex;
+    }
+    
+    .awards-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(var(--text-4xl), 6vw, var(--text-6xl));
+      font-weight: 700;
+      line-height: 1.15;
+      margin-bottom: var(--space-6);
+    }
+    
+    .awards-hero h1 em {
+      font-style: italic;
+      color: var(--color-accent-gold);
+    }
+    
+    .awards-hero p {
+      font-size: clamp(var(--text-base), 2vw, var(--text-xl));
+      line-height: 1.7;
+      opacity: 0.95;
+    }
+    
+    .certifications-section {
+      padding: var(--space-20) 0;
+      background: var(--color-white);
+    }
+    
+    .cert-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-6);
+    }
+    
+    @media (min-width: 640px) {
+      .cert-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    
+    @media (min-width: 1024px) {
+      .cert-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    
+    .cert-card {
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-xl);
+      padding: var(--space-8);
+      text-align: center;
+      transition: all var(--transition-base);
+    }
+    
+    .cert-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--color-primary);
+    }
+    
+    .cert-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto var(--space-5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-primary-pale);
+      color: var(--color-primary);
+      border-radius: var(--radius-full);
+      transition: all var(--transition-base);
+    }
+    
+    .cert-card:hover .cert-icon {
+      background: var(--color-primary);
+      color: var(--color-white);
+      transform: scale(1.1);
+    }
+    
+    .cert-card h3 {
+      font-size: var(--text-xl);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin-bottom: var(--space-3);
+    }
+    
+    .cert-year {
+      font-size: var(--text-sm);
+      font-weight: 600;
+      color: var(--color-primary);
+      margin-bottom: var(--space-3);
+    }
+    
+    .cert-description {
+      font-size: var(--text-sm);
+      line-height: 1.7;
+      color: var(--color-gray-600);
+    }
+    
+    .credentials-section {
+      padding: var(--space-20) 0;
+      background: var(--color-gray-50);
+    }
+    
+    .credentials-list {
+      max-width: 800px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-5);
+    }
+    
+    .credential-item {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--space-4);
+      padding: var(--space-6);
+      background: var(--color-white);
+      border: 1px solid var(--color-gray-200);
+      border-radius: var(--radius-lg);
+      transition: all var(--transition-base);
+    }
+    
+    .credential-item:hover {
+      box-shadow: var(--shadow-md);
+      border-color: var(--color-primary);
+    }
+    
+    .credential-check {
+      flex-shrink: 0;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-success);
+      color: var(--color-white);
+      border-radius: var(--radius-full);
+      font-weight: 700;
+      font-size: var(--text-xl);
+    }
+    
+    .credential-item h4 {
+      font-size: var(--text-lg);
+      font-weight: 700;
+      color: var(--color-gray-900);
+      margin-bottom: var(--space-2);
+    }
+    
+    .credential-item p {
+      font-size: var(--text-sm);
+      line-height: 1.6;
+      color: var(--color-gray-600);
+    }
+    
+    .cta-section {
+      padding: var(--space-20) 0;
+      background: linear-gradient(135deg, var(--color-primary-pale) 0%, var(--color-white) 100%);
+      text-align: center;
+    }
+    
+    .cta-section .section-container {
+      max-width: 700px;
+    }
+    
+    .cta-section .section-title {
+      margin-bottom: var(--space-6);
+    }
+    
+    .cta-section .section-lead {
+      margin: 0 auto var(--space-8);
+    }
+  </style>
 </head>
-<body class="awards-page">
+<body>
 
-<!-- ── NAV ──────────────────────────────────────── -->
-<nav id="main-nav">
-  <a href="index.html" class="nav-logo">
-    <img src="logo.png" alt="Assistans Runt Hörnan AB" class="nav-logo-img">
-    <span class="nav-logo-text">
-      Assistans Runt Hörnan
-      <small>Personlig Assistans AB</small>
-    </span>
-  </a>
-  <button class="mobile-menu-toggle" aria-label="Meny">
-    <span></span>
-    <span></span>
-    <span></span>
-  </button>
-  <ul class="nav-links">
-    <li><a href="index.html#tjanster">Tjänster</a></li>
-    <li><a href="index.html#om-oss">Om oss</a></li>
-    <li><a href="index.html#sprak">Språk</a></li>
-    <li><a href="utmarkelser.html">Utmärkelser</a></li>
-    <li><a href="index.html#kontakt">Kontakt</a></li>
-  </ul>
-  <a href="index.html#kontakt" class="nav-cta">Kontakta oss</a>
+<!-- Skip to main content -->
+<a href="#main-content" class="skip-link">Hoppa till huvudinnehåll</a>
+
+<!-- ── NAVIGATION ──────────────────────────────────────── -->
+<nav id="main-nav" role="navigation" aria-label="Huvudnavigation">
+  <div class="nav-container">
+    <a href="index.html#hem" class="nav-logo" aria-label="Assistans Runt Hörnan startsida">
+      <img src="logo.png" alt="" class="nav-logo-img" aria-hidden="true">
+      <span class="nav-logo-text">
+        Assistans Runt Hörnan
+        <small>Personlig Assistans AB</small>
+      </span>
+    </a>
+    
+    <button class="mobile-menu-toggle" aria-label="Öppna navigation" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="index.html#tjanster">Tjänster</a></li>
+      <li><a href="index.html#om-oss">Om oss</a></li>
+      <li><a href="index.html#varfor-oss">Fördelar</a></li>
+      <li><a href="index.html#sprak">Språk</a></li>
+      <li><a href="utmarkelser.html" class="active">Certifieringar</a></li>
+      <li><a href="index.html#kontakt">Kontakt</a></li>
+    </ul>
+    
+    <a href="index.html#kontakt" class="nav-cta">Kontakta oss</a>
+  </div>
 </nav>
 
-<!-- ── HERO SECTION ─────────────────────────── -->
-<section class="hero" id="hem">
-  <div class="hero-left">
-    <div class="hero-eyebrow">Våra arbetsprestationer</div>
-    <h1 class="hero-h1">
-      Erkänd för<br>
-      <em>kvalitet och omsorg</em>
-    </h1>
-    <p class="hero-p">
-      Vi är stolta över de utmärkelser, certifieringar och erkännanden
-      vi mottagit för vår dedikerade insats inom personlig assistans
-      och omsorgstjänster i Solna och regionen.
-    </p>
-  </div>
-</section>
-
-<!-- ── AWARDS SECTION ──────────────────────── -->
-<section id="awards">
-  <div class="section-tag reveal">Utmärkelser</div>
-  <h2 class="section-h2 reveal reveal-delay-1">Certifieringar & <em>Erkännanden</em></h2>
-  <p class="section-lead reveal reveal-delay-2">
-    Dessa utmärkelser speglar vårt engagemang för att leverera världsklass
-    assistans- och omsorgsservice.
-  </p>
-
-  <div class="awards-grid">
-    <!-- Award 1 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
-          <circle cx="12" cy="8" r="5"/>
-          <path d="M12 13c-4.97 0-9 2.686-9 6v3h18v-3c0-3.314-4.03-6-9-6z"/>
-        </svg>
-      </div>
-      <h3>Placeholder 1</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
-    </div>
-
-    <!-- Award 2 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
-          <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-        </svg>
-      </div>
-      <h3>Placeholder 2</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
-    </div>
-
-    <!-- Award 3 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
-          <path d="M9 12l2 2 4-4"/>
-          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-        </svg>
-      </div>
-      <h3>Placeholder 3</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
-    </div>
-
-    <!-- Award 4 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
-          <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
-        </svg>
-      </div>
-      <h3>Placeholder 4</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
-    </div>
-
-    <!-- Award 5 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
-          <path d="M9 11H7v6h2v-6zm4 0h-2v6h2v-6zm4 0h-2v6h2v-6z"/>
-        </svg>
-      </div>
-      <h3>Placeholder 5</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
-    </div>
-
-    <!-- Award 6 -->
-    <div class="award-card reveal">
-      <div class="award-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="40" height="40">
+<!-- ── HERO SECTION ─────────────────────────────────────── -->
+<main id="main-content">
+  <section class="awards-hero">
+    <div class="section-container">
+      <div class="hero-badge">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16">
           <path d="M12 2L15.09 10H23L17.55 14.07L19.64 22L12 17.93L4.36 22L6.45 14.07L1 10H8.91L12 2Z"/>
         </svg>
+        <span>Kvalitet & Säkerhet</span>
       </div>
-      <h3>Placeholder 6</h3>
-      <p class="award-year">-</p>
-      <p style="font-size: 1.2rem; color: var(--muted); font-weight: 600;">None</p>
+      
+      <h1>
+        Certifierad för<br>
+        <em>excellens i omsorg</em>
+      </h1>
+      
+      <p>
+        Vi är stolta över våra certifieringar och registreringar som bekräftar vårt 
+        engagemang för högsta kvalitet inom personlig assistans och omsorg.
+      </p>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ── CREDENTIALS SECTION ───────────────────── -->
-<section id="credentials">
-  <div class="section-tag reveal">Verksamhetscertifikat</div>
-  <h2 class="section-h2 reveal reveal-delay-1">Officiella <em>Registreringar</em></h2>
+  <!-- ── CERTIFICATIONS SECTION ──────────────────────────── -->
+  <section class="certifications-section">
+    <div class="section-container">
+      <header class="section-header centered">
+        <div class="section-tag reveal">Våra kvalitetsstandarder</div>
+        <h2 class="section-title reveal">
+          Certifieringar &<br>
+          <em>Kvalitetsgarantier</em>
+        </h2>
+        <p class="section-lead reveal">
+          Dessa certifieringar och erkännanden speglar vårt långsiktiga arbete med 
+          att leverera assistanstjänster av högsta klass.
+        </p>
+      </header>
+      
+      <div class="cert-grid">
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <path d="M12 2L2 7v10c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V7l-10-5z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+          </div>
+          <h3>Registrerat Aktiebolag</h3>
+          <p class="cert-year">Sedan 2010</p>
+          <p class="cert-description">
+            Officiellt registrerat hos Bolagsverket med organisationsnummer 556804-5354. 
+            Fullständig transparens och regelefterlevnad.
+          </p>
+        </article>
+        
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <rect x="2" y="3" width="20" height="18" rx="2"/>
+              <path d="M8 7h8M8 11h8M8 15h4"/>
+            </svg>
+          </div>
+          <h3>F-skatt & Momsregistrering</h3>
+          <p class="cert-year">Godkänt av Skatteverket</p>
+          <p class="cert-description">
+            Godkänd för F-skatt och momsregistrerad, vilket säkerställer korrekt 
+            skattehantering och professionell verksamhet.
+          </p>
+        </article>
+        
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <h3>Utbildad Personal</h3>
+          <p class="cert-year">Löpande kompetensutv.</p>
+          <p class="cert-description">
+            All personal har genomgått utbildning inom personlig assistans, förflyttning, 
+            bemötande och första hjälpen.
+          </p>
+        </article>
+        
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+              <polyline points="3.27 6.96 12 12.01 20.73 6.96"/>
+              <line x1="12" y1="22.08" x2="12" y2="12"/>
+            </svg>
+          </div>
+          <h3>Försäkringsskydd</h3>
+          <p class="cert-year">Omfattande täckning</p>
+          <p class="cert-description">
+            Fullständig yrkesansvarsförsäkring, företagsförsäkring och 
+            personalförsäkring för maximal trygghet.
+          </p>
+        </article>
+        
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+              <polyline points="14 2 14 8 20 8"/>
+              <line x1="16" y1="13" x2="8" y2="13"/>
+              <line x1="16" y1="17" x2="8" y2="17"/>
+              <polyline points="10 9 9 9 8 9"/>
+            </svg>
+          </div>
+          <h3>GDPR-efterlevnad</h3>
+          <p class="cert-year">Dataskydd & Integritet</p>
+          <p class="cert-description">
+            Vi följer alla GDPR-krav för hantering av personuppgifter och 
+            säkerställer våra kunders integritet.
+          </p>
+        </article>
+        
+        <article class="cert-card reveal">
+          <div class="cert-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="36" height="36">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+            </svg>
+          </div>
+          <h3>Flerspråkig Service</h3>
+          <p class="cert-year">Kulturell kompetens</p>
+          <p class="cert-description">
+            Certifierad personal som talar svenska, engelska, spanska och arabiska 
+            för optimal kommunikation.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CREDENTIALS SECTION ─────────────────────────────── -->
+  <section class="credentials-section">
+    <div class="section-container">
+      <header class="section-header centered">
+        <div class="section-tag reveal">Officiella registreringar</div>
+        <h2 class="section-title reveal">
+          Verifierade <em>Kvalitetsbevis</em>
+        </h2>
+        <p class="section-lead reveal">
+          Alla våra officiella registreringar och tillstånd som bekräftar att 
+          vi driver en laglig och professionell verksamhet.
+        </p>
+      </header>
+      
+      <div class="credentials-list">
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>Registrerat Aktiebolag</h4>
+            <p>
+              Organisationsnummer: 556804-5354 · Registrerat: 2010-04-12 · Säte: Solna<br>
+              Registrerat hos Bolagsverket med transparent ägarstruktur och ekonomisk rapportering.
+            </p>
+          </div>
+        </div>
+        
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>F-skatt & Momsregistrering</h4>
+            <p>
+              Godkänd för F-skatt av Skatteverket. Momsregistrerat företag med korrekt 
+              skattehantering och regelefterlevnad enligt svensk lagstiftning.
+            </p>
+          </div>
+        </div>
+        
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>Arbetsgivarregistrering</h4>
+            <p>
+              Registrerad som arbetsgivare med korrekt hantering av arbetsgivaravgifter, 
+              pensioner och socialavgifter för all anställd personal.
+            </p>
+          </div>
+        </div>
+        
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>Yrkesansvarsförsäkring</h4>
+            <p>
+              Fullständig yrkesansvarsförsäkring som täcker alla aspekter av vår verksamhet 
+              inom personlig assistans och omsorg.
+            </p>
+          </div>
+        </div>
+        
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>Personalförsäkringar</h4>
+            <p>
+              Alla medarbetare har omfattande försäkringsskydd inklusive arbetsskadeförsäkring, 
+              tjänstegruppliv och pensionsförsäkring.
+            </p>
+          </div>
+        </div>
+        
+        <div class="credential-item reveal">
+          <div class="credential-check">✓</div>
+          <div>
+            <h4>GDPR & Dataskydd</h4>
+            <p>
+              Fullständig efterlevnad av GDPR med dokumenterade rutiner för hantering av 
+              personuppgifter och säkerställande av kunders integritet.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA SECTION ──────────────────────────────────────── -->
+  <section class="cta-section">
+    <div class="section-container">
+      <h2 class="section-title reveal">
+        Intresserad av att<br>
+        <em>samarbeta med oss?</em>
+      </h2>
+      <p class="section-lead reveal">
+        Vi letar alltid efter kvalificerade och engagerade människor som vill göra 
+        skillnad i andra människors liv. Är du vår nästa medarbetare?
+      </p>
+      <div class="reveal">
+        <a href="index.html#kontakt" class="btn-primary">
+          <span>Kontakta oss idag</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer class="footer" role="contentinfo">
+  <div class="footer-container">
+    <div class="footer-brand">
+      <img src="logo.png" alt="" class="footer-logo" aria-hidden="true">
+      <div>
+        <div class="footer-brand-name">Assistans Runt Hörnan AB</div>
+        <div class="footer-brand-tagline">Personlig Assistans · Ledsagarservice · Avlösning</div>
+      </div>
+    </div>
+    
+    <nav class="footer-nav" aria-label="Sidfotnavigation">
+      <div class="footer-nav-group">
+        <h4>Tjänster</h4>
+        <a href="index.html#tjanster">Personlig assistans</a>
+        <a href="index.html#tjanster">Ledsagarservice</a>
+        <a href="index.html#tjanster">Avlösning</a>
+      </div>
+      
+      <div class="footer-nav-group">
+        <h4>Företaget</h4>
+        <a href="index.html#om-oss">Om oss</a>
+        <a href="index.html#varfor-oss">Varför oss</a>
+        <a href="utmarkelser.html">Certifieringar</a>
+      </div>
+      
+      <div class="footer-nav-group">
+        <h4>Kontakt</h4>
+        <a href="tel:+46876019 31">08-760 19 31</a>
+        <a href="mailto:info@assistans-r-h.se">info@assistans-r-h.se</a>
+        <a href="index.html#kontakt">Kontaktformulär</a>
+      </div>
+    </nav>
+  </div>
   
-  <div class="credentials-list">
-    <div class="credential-item reveal reveal-delay-2">
-      <div class="credential-check">✓</div>
-      <div>
-        <h4>Registrerad Aktiebolag (AB)</h4>
-        <p>Organisationsnummer: 556804-5354 | Registrerad: 2010-04-12</p>
-      </div>
-    </div>
-    <div class="credential-item reveal">
-      <div class="credential-check">✓</div>
-      <div>
-        <h4>F-skatt & Momspliktig</h4>
-        <p>Momsregistrerad och skatteverifierad företagare sedan start.</p>
-      </div>
-    </div>
-    <div class="credential-item reveal">
-      <div class="credential-check">✓</div>
-      <div>
-        <h4>Arbetstillstånd & Personalöversikt</h4>
-        <p>Alla medarbetare genomgår background check och utbildning.</p>
-      </div>
-    </div>
-    <div class="credential-item reveal">
-      <div class="credential-check">✓</div>
-      <div>
-        <h4>Försäkringar & Ansvar</h4>
-        <p>Fullständig yrkesansvarsförsäkring och personalförsäkring.</p>
-      </div>
+  <div class="footer-bottom">
+    <p>© <span id="current-year">2025</span> Assistans Runt Hörnan AB · Org.nr 556804-5354 · Alla rättigheter förbehållna</p>
+    <div class="footer-links">
+      <a href="#integritet">Integritetspolicy</a>
+      <a href="#cookies">Cookies</a>
     </div>
   </div>
-</section>
-
-<!-- ── CTA SECTION ─────────────────────────── -->
-<section id="cta-section">
-  <h2 class="section-h2 reveal">Intresserad att<br><em>arbeta med oss?</em></h2>
-  <p class="section-lead reveal reveal-delay-1">
-    Vi letar alltid efter passionerade och dedikerade människor
-    som vill göra skillnad i andra människors liv.
-  </p>
-  <div class="reveal reveal-delay-2">
-    <a href="index.html#kontakt" class="btn-primary">
-      Hör av dig
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-    </a>
-  </div>
-</section>
-
-<!-- ── FOOTER ─────────────────────────────────────── -->
-<footer>
-  <div class="footer-brand">
-    <img src="logo.png" alt="Assistans Runt Hörnan AB" class="footer-logo">
-    <span>
-      Assistans Runt Hörnan AB
-      <small>Personlig Assistans · Ledsagarservice · Avlösning · Solna</small>
-    </span>
-  </div>
-  <p>© <span id="current-year">2025</span> Assistans Runt Hörnan AB · Org.nr 556804-5354</p>
-  <nav class="footer-nav">
-    <a href="index.html#tjanster">Tjänster</a>
-    <a href="index.html#om-oss">Om oss</a>
-    <a href="index.html#sprak">Språk</a>
-    <a href="utmarkelser.html">Utmärkelser</a>
-    <a href="index.html#kontakt">Kontakt</a>
-  </nav>
 </footer>
 
 <script src="app.js"></script>
